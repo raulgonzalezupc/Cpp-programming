@@ -5,13 +5,14 @@
 
 class String {
 	private:
-		char string[50];
-		int i = 0;
+		char *string= nullptr;
+		int size = 0;
+		int lenghtOfChar = 0;
 	public:
-		String(const char* c)
-		{
-			memcpy(string, c, 50);
-		}
+		String(){}
+		String(const char *newString);
+		String operator+(const String &initialString) const ;
+		bool operator==(const String &initialString) const;
 		virtual ~String(){}
 		const void getString();
 		const void lenght();
