@@ -8,13 +8,11 @@ class Vec3{
 	private:
 		T x, y, z;
 	public:	
-		Vec3() : x(0) , y(0) , z(0) {}
+		Vec3() : x() , y() , z() {}
 		Vec3(T x, T y, T z) : x(x) , y(y) , z(z) {}
-		Vec3(Vec3 vector1, Vec3 vector2)
+		Vec3<T> operator+(const Vec3<T> &vector1) const
 		{
-			this->x = vector1.x + vector2.x;
-			this->y = vector1.y + vector2.y;
-			this->z = vector1.z + vector2.z;
+			return Vec3(vector1.x + x, vector1.y + y, vector1.z + z);
 		}
 		virtual ~Vec3(){}
 		void getVec() {
